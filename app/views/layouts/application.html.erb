@@ -5,15 +5,32 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+   <!-- Con estas 2 líneas llamamos a los archivos CSS y Javascript de Bootstrap y demás -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    
-    <%= link_to 'one', pages_one_path %>
-    <%= link_to 'two', pages_two_path %>
-    <%= link_to 'three', pages_three_path %>
-    <%= yield %>
+  <!-- Nav -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-inverse">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to 'Página1', pages_one_path %>></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to 'Página2', pages_two_path %>></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to 'Página3', pages_three_path %>></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+   <%= yield %>
   </body>
 </html>
